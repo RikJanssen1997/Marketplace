@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public  class Beheerder:Gebruiker
+    public class Beheerder : Gebruiker
     {
         public int BeheerderId { get; private set; }
         public Beheerder(int id, string gebruikersnaam, string wachtwoord, int beheerderId)
@@ -15,9 +15,6 @@ namespace Models
             Gebruikersnaam = gebruikersnaam;
             Wachtwoord = wachtwoord;
             BeheerderId = beheerderId;
-
         }
-
-
     }
 }

@@ -8,14 +8,12 @@ namespace Models
 {
     public class Bod
     {
-        public int Id { get; private set; }
-        public decimal Bedrag { get; private set; }
-        public Klant Bieder { get; private set; }
-        public Bod(int id, decimal bedrag, Klant bieder)
+        public int Id { get;private set; }
+        public decimal Bedrag { get;private set; }
+        public Bod(int id, decimal bedrag)
         {
             Id = id;
             Bedrag = bedrag;
-            Bieder = bieder;
         }
     }
 }

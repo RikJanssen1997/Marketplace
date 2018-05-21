@@ -8,12 +8,11 @@ namespace Models
 {
     public class Chat
     {
-        public int Id { get; private set; }
-        public List<VerzondenBericht> VerzondenBerichten { get; set; }
-        public List<Gebruiker> Gebruikers { get; set; }
+        public int Id { get;private set; }
         public Chat(int id)
         {
             Id = id;
+
         }
     }
 }

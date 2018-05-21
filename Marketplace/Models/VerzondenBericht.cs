@@ -8,14 +8,14 @@ namespace Models
 {
     public class VerzondenBericht
     {
-        public int Id { get; private set; }
-        public string Tekst { get; private set; }
-        public int VolgordeNummer { get; private set; }
-        public VerzondenBericht(int id, string tekst, int volgordeNummer)
+        public int Id { get;private set; }
+        public string Tekst { get;private set; }
+        public int Volgordenummer { get;private set; }
+        public VerzondenBericht(int id, string tekst, int volgordenummer)
         {
             Id = id;
             Tekst = tekst;
-            VolgordeNummer = volgordeNummer;
+            Volgordenummer = volgordenummer;
         }
     }
 }
