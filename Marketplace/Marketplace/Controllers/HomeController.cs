@@ -10,6 +10,7 @@ namespace Marketplace.Controllers
     {
         public ActionResult Index()
         {
+            
             return View();
         }
 

@@ -1,0 +1,33 @@
+﻿@model Models.ViewModels.KlantBeheerder
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @ViewBag.Error
+    @using (Html.BeginForm("Login", "Login"))
+    {
+    <table cellpadding="2" cellspacing="2">
+        <tr>
+            <td>@Html.LabelFor(x => x.gebruikersnaam)</td>
+            <td>@Html.TextBoxFor(x => x.gebruikersnaam)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.wachtwoord)</td>
+            <td>@Html.PasswordFor(x => x.wachtwoord)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td><input type="submit" value="Login"/></td>
+        </tr>
+    </table>
+    }
+</body>
+</html>
