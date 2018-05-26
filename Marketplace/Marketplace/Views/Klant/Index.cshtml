@@ -1,6 +1,6 @@
-﻿
+﻿@model IEnumerable<Models.Advertentie>
 @{
-    Layout = null;
+    
 }
 
 <!DOCTYPE html>
@@ -11,8 +11,39 @@
     <title>Index</title>
 </head>
 <body>
-    <div> 
+    <div>
         welkom @Session["Gebruikersnaam"]
     </div>
-</body>
+    <table class="table">
+        <tr>
+            <th>
+                Titel
+
+            </th>
+            <th>
+                Nu kopen prijs
+
+            </th>
+            <th>
+                Einddatum
+
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nu_Kopen_Prijs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Einddatum)
+            </td>
+        </tr>
+        }
+            </table>
+    </body>
+
 </html>

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Logic;
+using DAL.Context;
 
 namespace Marketplace.Controllers
 {
@@ -12,7 +14,10 @@ namespace Marketplace.Controllers
         // GET: Klant
         public ActionResult Index(Klant k)
         {
-            return View();
+            List<Advertentie> advertentieslist = new List<Advertentie>();
+            Advertenties a = new Advertenties();
+            advertentieslist = a.GetAllAdvertenties(new DAL.Context.SQLContext.SQLAdvertenties());
+            return View(advertentieslist);
         }
     }
 }
