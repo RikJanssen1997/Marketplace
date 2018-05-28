@@ -19,5 +19,13 @@ namespace Marketplace.Controllers
             advertentieslist = a.GetAllAdvertenties(new DAL.Context.SQLContext.SQLAdvertenties());
             return View(advertentieslist);
         }
+        public ActionResult AdvertentieDetails(int advertentie)
+        {
+
+            
+            Advertenties a = new Advertenties();
+            Advertentie ad = a.GetAdvertentie(new DAL.Context.SQLContext.SQLAdvertenties(), advertentie);
+            return View(ad);
+        }
     }
 }

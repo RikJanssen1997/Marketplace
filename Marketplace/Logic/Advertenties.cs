@@ -15,6 +15,10 @@ namespace Logic
             List<Advertentie> advertentieslist = i.GetAllAdvertenties();
             return advertentieslist;   
         }
-
+        public Advertentie GetAdvertentie(IAdvertenties i, int id)
+        {
+            Advertentie a = i.GetAdvertentie(id);
+            return a;
+        }
     }
 }

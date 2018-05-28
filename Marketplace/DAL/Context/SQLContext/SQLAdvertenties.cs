@@ -33,5 +33,29 @@ namespace DAL.Context.SQLContext
             return advertentieslist;
             
         }
+        public Advertentie GetAdvertentie(int id)
+        {
+
+            Connection c = new Connection();
+            SqlConnection conn = c.conn();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Advertenties WHERE ID = @id", conn);
+            cmd.Parameters.AddWithValue("@id", id);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            cmd.Connection.Open();
+            cmd.ExecuteNonQuery();
+            cmd.Connection.Close();
+            if (dt.Rows.Count > 0)
+            {
+                DataRow i = dt.Rows[0];
+                Advertentie a = new Advertentie(i.Field<int>(0), i.Field<int>(1), i.Field<decimal>(2), i.Field<decimal>(3), i.Field<string>(4), i.Field<DateTime>(5), i.Field<string>(6));
+                return a;
+
+            }
+            else
+            return null;
+
+        }
     }
 }

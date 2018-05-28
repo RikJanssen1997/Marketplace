@@ -10,5 +10,6 @@ namespace DAL.Interfaces
     public interface IAdvertenties
     {
         List<Advertentie> GetAllAdvertenties();
+        Advertentie GetAdvertentie(int id);
     }
 }
